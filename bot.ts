@@ -6,5 +6,5 @@ bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 
 bot.command("ping", (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`));
 
-// // 启动你的 bot
-// bot.start();
+// 启动你的 bot
+bot.start();
