@@ -7,10 +7,10 @@ bot.command("start", (ctx) => ctx.reply("Welcome! Up and running."));
 bot.command("ping", (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`));
 
 bot.command("play", (ctx) => {ctx.replyWithGame("matchgame")});
-bot.on("callback_query:game_short_name", async (ctx) => {
-    console.log("ctx.callbackQuery.game_short_name = ",ctx.callbackQuery.game_short_name)
+bot.on("callback_query:game_short_name", (ctx) => {
     if (ctx.callbackQuery.game_short_name === "matchgame") {
-        await ctx.answerCallbackQuery({ url: "https://magicianjoker.icu/CocosSillyMatch/web-mobile/" });
+        ctx.reply("game loading.");
+        ctx.answerCallbackQuery({ url: "https://magicianjoker.icu/CocosSillyMatch/web-mobile/" });
     }
 });
 
