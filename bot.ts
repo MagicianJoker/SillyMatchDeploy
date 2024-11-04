@@ -9,7 +9,6 @@ bot.command("ping", (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`));
 bot.command("play", (ctx) => {ctx.replyWithGame("matchgame")});
 bot.on("callback_query:game_short_name", (ctx) => {
     if (ctx.callbackQuery.game_short_name === "matchgame") {
-        ctx.reply("game loading.");
         ctx.answerCallbackQuery({ url: "https://magicianjoker.icu/CocosSillyMatch/web-mobile/" });
     }
 });
